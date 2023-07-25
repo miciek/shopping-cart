@@ -82,4 +82,7 @@ Template: scala-sbt
 Here are some of the notes I have taken during the implementation. They would usually go into the description of a PR or a different discussion with teammates:
 
 1. I chose the verb-centric approach to naming so that the code is more feature-centric. This is not a common approach so should be used if the project is already using it or the team agrees this is needed.
-1. `FetchTestPrices` uses raw `Exception`s when a product price is not defined. Is it enough and readable for tests?
+2. `FetchTestPrices` uses raw `Exception`s when a product price is not defined. Is it enough and readable for tests?
+3. I used `IO` explicitly in signatures instead of `F` to make things simpler.
+4. What happens if we are adding multiple products with the same name? For now, I implemented a "combining" algorithm based on my experience with shopping carts.
+5. The API doesn't return a failed `IO` when quantity is negative. It is supported as a side effect of adding multiple products with the same name.
