@@ -5,7 +5,7 @@ import com.siriusxm.example.cart.model.{Cart, CartItem, Product}
 import com.siriusxm.example.cart.pricing.FetchPrices
 
 class AddToCart(fetchPrices: FetchPrices) {
-  def addToCart(cartRef: Ref[IO, Cart], productName: String, quantity: Int): IO[Cart] = {
+  def add(cartRef: Ref[IO, Cart], productName: String, quantity: Int): IO[Cart] = {
     for {
       productPrice <- fetchPrices.fetchProductPrice(productName)
       product       = Product(productName, productPrice)

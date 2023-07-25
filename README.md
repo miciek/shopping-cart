@@ -86,3 +86,4 @@ Here are some of the notes I have taken during the implementation. They would us
 3. I used `IO` explicitly in signatures instead of `F` to make things simpler.
 4. What happens if we are adding multiple products with the same name? For now, I implemented a "combining" algorithm based on my experience with shopping carts.
 5. The API doesn't return a failed `IO` when quantity is negative. It is supported as a side effect of adding multiple products with the same name.
+6. There should be some error handling added, like custom `ProductDoesntExist`, maybe in `IO[Either]` or a bifunctor IO. For now, it throws `DeserializationException` which is too low-level.

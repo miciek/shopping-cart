@@ -66,4 +66,3 @@ hs_err_pid*
 *.code-workspace
 
 # End of https://www.toptal.com/developers/gitignore/api/intellij+all,sbt,scala,visualstudiocode,metals,bloop
-Main.scala
